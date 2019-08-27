@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BMI Calcular</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script>
+			function calculate() 
+			{
+				var mass = Number(document.getElementById("mass").value);
+				var height = Number(document.getElementById("heigth").value);
+				var bmi = mass/((height/100)*(height/100));
+				if(bmi<18.5){
+					document.getElementById("answer").innerHTML="underweigth";
+				}
+				if(bmi>=18.5 && bmi<24.9){
+					document.getElementById("answer").innerHTML="normal weigth";
+				}
+				if(bmi>=24.9 && bmi<29.9){
+					document.getElementById("answer").innerHTML="overweigth";
+				}
+				if(bmi>=29.9 && bmi<39.9){
+					document.getElementById("answer").innerHTML="obesity";
+				}
+				if(bmi>=39.9){
+					document.getElementById("answer").innerHTML="morbid obesity";
+				}
+				document.getElementById("bmi").innerHTML = bmi;
+			}
+		</script>
+	</head>
+	<body>
+		<div id="conteiner">
+			Enter Mass (in kilograms): <input id="mass" type="text" /> <br />
+			Enter Heigth (in centimeters): <input id="heigth" type="text" /> <br />
+			<button onclick="calculate()">Calculate BMI</button> <br />
+			Your BMI is: <span id="bmi"></span> <br />
+			Your status is: <span id="answer"></span>
+		</div>
+	</body>
+</html>
